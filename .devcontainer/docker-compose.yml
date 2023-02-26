@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mssql:
+    container_name: hangjn-mssql
+    image: mcr.microsoft.com/mssql/server
+    restart: unless-stopped
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    expose:
+      - 1433
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "P@ssw0rd"
+    volumes:
+      # - ../data:/var/opt/mssql
+      # - ../log:/var/opt/mssql/log
+      # - ../backup:/var/opt/mssql/backup
+      - ../:/workspaces/mssql

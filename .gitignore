@@ -1,0 +1,4 @@
+**/*.bak
+data/*
+log/*
+!**/*.gitkeep
